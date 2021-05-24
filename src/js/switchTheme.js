@@ -10,8 +10,6 @@ const refs = {
 
 refs.checkbox.addEventListener('change', onClickCheckbox);
 
-refs.body.classList.add(Theme.LIGHT);
-
 function onClickCheckbox(e) {
   refs.body.classList.toggle(Theme.LIGHT);
   refs.body.classList.toggle(Theme.DARK);
@@ -23,8 +21,12 @@ function onClickCheckbox(e) {
   }
 }
 
-const saveTheme = localStorage.getItem('theme');
-if (saveTheme === Theme.DARK) {
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === Theme.DARK) {
   refs.checkbox.checked = true;
   refs.body.classList.add(Theme.DARK);
+}
+if (savedTheme !== Theme.DARK) {
+  refs.checkbox.checked = false;
+  refs.body.classList.add(Theme.LIGHT);
 }
