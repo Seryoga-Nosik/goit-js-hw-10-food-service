@@ -26,7 +26,7 @@ if (savedTheme === Theme.DARK) {
   refs.checkbox.checked = true;
   refs.body.classList.add(Theme.DARK);
 }
-if (savedTheme !== Theme.DARK) {
+if (savedTheme === Theme.LIGHT) {
   refs.checkbox.checked = false;
   refs.body.classList.add(Theme.LIGHT);
 }
